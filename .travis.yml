@@ -1,0 +1,16 @@
+language: python
+python:
+- '3.6'
+install:
+- pip install -r requirements.txt
+deploy:
+  provider: lambda
+  function_name: colonial-williamsburg-skill
+  region: us-east-1
+  role: arn:aws:iam::213717599609:role/lambda_basic_execution
+  runtime: python3.6
+  handler_name: lambda_handler
+  zip: "./src"
+  access_key_id: AKIAJL7FBCD7O6HZJ5YQ
+  secret_access_key:
+    secure: WNp9Lp70+0QdlL2HRaZc4wnt9YTgA0Bs1e4RALl6R+49g7zJ72rAtBKAMWHWszS+gLXULtAg039DUGfhlIzcYjN3LxGvhLWpyPPg5dxnleHJSoPys5PzP8k/kbrmMQCEiBMexCXcIU6F9Cq7lMr82JPyJdziwy6WSnh5KZAflJRtXAsdfLS3RhVy+2PEsYC9b8DU+XoePBLCVXXtIDoQ692DyDcfsM7V2rdM80B8XhFv+X6iFOdadfBOzRtJdb/kjasffgh4F2z1uL48uT3ZZDQJQmFrhGJ8kgk6YoJ/FWw9jPF791/9wzRnXrNepAUNVZUlgPNxa4G1mkB/leB6SPLeDezCyRWdDQXjfGaoWsRdKqmZyB4Q5cq5jRbo+7BuTUFxH+8JXNONiR3BWhdp2JQP1Ezv/vfvixZ/4zrrZSyB3PaProh3wZwo9TqBp4rF7BdeHdlvwLxtA2rK4OaFvrAKVm/x3khB6IQslSF7X83OrSj1T6oXv/Kg9pvG2ThK46ajgLw7TFDXVqN6h7r5qj8omMaIhDyjyF+qIG1yBNmmvNCUhrBCxOlPNC0Ocqnr7+yhDu2iUMjaWiABG1xxNpJI+QiFuX99aXM42X7+yEKVwzgw7ksJy8bRv+4c+jpror0Twcd5R5U16+mS8f8EXopB1Wf5JBhgeiGvl+j1p+s=
